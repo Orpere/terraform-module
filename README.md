@@ -1,5 +1,5 @@
 
-# what is this repository for?
+## terraform-modules -> repo that I can use to see how modules work
 
 This repo has as target to define and show what I have learned about terraform modules
 
