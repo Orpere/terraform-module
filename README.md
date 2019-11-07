@@ -65,6 +65,7 @@ Folder structure
 │   └── variables.tf
 
 ```
+
 ## The module structure 
 
 Input variables to add values to the module with out change his configuration.
@@ -73,4 +74,4 @@ Output values to populate other configurations external to the module, is the wa
 
 Resources show what infrastructure components your module will manage.
 
-for a better explication please consult hashicorp documentation on [link](https://www.terraform.io/docs/modules/index.html) 
+for a better explication please consult hashicorp documentation on [link](https://www.terraform.io/docs/modules/index.html)
