@@ -1,5 +1,5 @@
 
-# terraform-modules ->repo that you can use to see how modules work
+# terraform-module ->repo that you can use to see how modules work
 
 ## how can I use this repository`?`
 
@@ -7,7 +7,7 @@ This repo has as dependencies a command line or shell git and terraform.You can 
 
 ## How can I use this repo`?`
 
-### Task - clone repo terraform-modules
+### Task - clone repo terraform-module
 
 - open your shell or command line and go to the directory where you pretend to add the repo
 
@@ -16,13 +16,13 @@ cd <directory where pretend to add the repo>
 ```
 
 ```git
-git clone git@github.com:Orpere/terraform-modules.git
+git clone git@github.com:Orpere/terraform-module.git
 ```
 
 ### Task - move to your repo folder
 
 ```bash
-cd terraform-modules
+cd terraform-module
 ```
 
 ### Task - terraform init
