@@ -1,70 +1,97 @@
 
-## terraform-modules -> repo that I can use to see how modules work
+# terraform-modules ->repo that you can use to see how modules work
 
-This repo has as target to define and show what I have learned about terraform modules
+## how can I use this repository`?`
 
-how can I use this repository?
-You can use this repo as reference or you can clone the repository to your computer using the follow commands 
+This repo has as dependencies a command line or shell git and terraform.You can find the install instructions bellow on [EXTRAS](#extras) section.
+
+## How can I use this repo`?`
+
+### Task - clone repo terraform-modules
+
+- open your shell or command line and go to the directory where you pretend to add the repo
+
+```bash
+cd <directory where pretend to add the repo>
+```
 
 ```git
 git clone git@github.com:Orpere/terraform-modules.git
 ```
 
-for more instructions to use git you can check the [link](https://rogerdudler.github.io/git-guide/) it will have a much better explination about all git steps
+### Task - move to your repo folder
 
-After clone the repo you can install terraform downloading the adequate version to your OS on [Terraform](https://www.terraform.io/downloads.html).
+```bash
+cd terraform-modules
+```
 
-Terraform most used commands are:
+### Task - terraform init
 
-- terraform fmt - cleans up your code formatting
-- terraform init - retrieves your modules and dependencies
-- terraform plan - plans the AWS infrastructure
-- terraform apply - creates the AWS infrastructure
-  
-# terraform-modules
-
-The inspiration for this repository come from the Hashicorp [documentation](https://www.terraform.io/docs/modules/index.html)
-
-NOTE: these terraform files are using a null Provider
-
-Null Provider
-[The null provider is a rather-unusual provider that has constructs that intentionally do nothing. This may sound strange, and indeed these constructs do not need to be used in most cases, but they can be useful in various situations to help orchestrate tricky behavior or work around limitations.](https://www.terraform.io/docs/providers/null/index.html)
-
-![terraform](terraform.png)
-
-## Modules
-
-Modules are self contain packages in terraform and are used to reuse code.
-Modules must be defined on the root main.tf as terraform can't see any of the configurations inside the module with out the right path.
-The way how terraform can see meta information from the module is using the module outputs.
-
-example:
-
-main.tf module definition
+- this will retrieve all dependencies for terraform scripts
 
 ```terraform
-module "module_web" {
-  source = "./module_web"
-  
+terraform init
+```
+
+### Task - run terraform apply
+
+```terraform
+terraform apply
+```
+
+- This step will prompt `<<`Do you want to perform these actions?`>>`
+  the answer should be **yes**
+
+ 
+
+### Task - check the result
+
+- In this case the results should be as bellow
+
+```terraform 
+
+module.module_web.null_resource.outputsStudy[1]: Creating...
+module.module_web.null_resource.outputsStudy[0]: Creating...
+module.module_web.null_resource.outputsStudy[1]: Provisioning with 'local-exec'...
+module.module_web.null_resource.outputsStudy[0]: Provisioning with 'local-exec'...
+module.module_web.null_resource.outputsStudy[1] (local-exec): Executing: ["/bin/sh" "-c" "echo this is the  1 outputsStudy"]
+module.module_web.null_resource.outputsStudy[0] (local-exec): Executing: ["/bin/sh" "-c" "echo this is the  0 outputsStudy"]
+module.module_web.null_resource.outputsStudy[0] (local-exec): this is the 0 outputsStudy
+module.module_web.null_resource.outputsStudy[0]: Creation complete after 0s [id=4347656025676492965]
+module.module_web.null_resource.outputsStudy[1] (local-exec): this is the 1 outputsStudy
+module.module_web.null_resource.outputsStudy[1]: Creation complete after 0s [id=4752306429300288452]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+id = {
+  "id" = [
+    {
+      "id" = "4347656025676492965"
+    },
+    {
+      "id" = "4752306429300288452"
+    },
+  ]
 }
 ```
 
-Folder structure
+### Task - Terraform destroy
 
-```bash
-
-├── module_web
-│   ├── main.tf
-│   ├── outputs.tf
-
+```terraform
+terraform destroy
 ```
 
-## The module structure 
+- This will request confirmation and if your answer is **yes**
+- this will wipe the resources you have builded
+  
+#### EXTRAS
 
-Input variables to add values to the module with out change his configuration.
+This repo was based on the [documentation](https://www.terraform.io/docs/configuration/modules.html)
 
-Output values to populate other configurations external to the module, is the way how your configuration can reach the module metadata.
+[Install git](https://gist.github.com/derhuerst/1b15ff4652a867391f03#file-intro-md)
+for more instructions to use git you can check the [link](https://rogerdudler.github.io/git-guide/) it will have a much better explanation about all git steps
 
-Resources show what infrastructure components your module will manage.
-
-for a better explication please consult hashicorp documentation on [link](https://www.terraform.io/docs/modules/index.html)
+After clone the repo you can install terraform downloading the adequate version to your OS on [Terraform](https://www.terraform.io/downloads.html)
+If you don't know how to install please follow the [tutorial](https://learn.hashicorp.com/terraform/getting-started/install.html)
