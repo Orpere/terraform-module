@@ -75,7 +75,7 @@ id = {
 }
 ```
 
-### 6 - Terraform destroy
+### 6 - terraform destroy
 
 ```terraform
 terraform destroy
