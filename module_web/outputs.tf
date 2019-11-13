@@ -1,3 +1,3 @@
 output "id" {
-  value = "${null_resource.outputstudy}"
+  value = "${null_resource.modulestudy}"
 }

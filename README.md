@@ -47,17 +47,16 @@ terraform apply
 - In this case the results should be as bellow
 
 ```terraform
-
-module.module_web.null_resource.outputstudy[0]: Creating...
-module.module_web.null_resource.outputstudy[1]: Creating...
-module.module_web.null_resource.outputstudy[0]: Provisioning with 'local-exec'...
-module.module_web.null_resource.outputstudy[1]: Provisioning with 'local-exec'...
-module.module_web.null_resource.outputstudy[0] (local-exec): Executing: ["/bin/sh" "-c" "echo this is the  0 outputstudy"]
-module.module_web.null_resource.outputstudy[1] (local-exec): Executing: ["/bin/sh" "-c" "echo this is the  1 outputstudy"]
-module.module_web.null_resource.outputstudy[0] (local-exec): this is the 0 outputstudy
-module.module_web.null_resource.outputstudy[0]: Creation complete after 0s [id=4422241328498518262]
-module.module_web.null_resource.outputstudy[1] (local-exec): this is the 1 outputstudy
-module.module_web.null_resource.outputstudy[1]: Creation complete after 0s [id=5483529788494088667]
+module.module_web.null_resource.modulestudy[1]: Creating...
+module.module_web.null_resource.modulestudy[0]: Creating...
+module.module_web.null_resource.modulestudy[0]: Provisioning with 'local-exec'...
+module.module_web.null_resource.modulestudy[1]: Provisioning with 'local-exec'...
+module.module_web.null_resource.modulestudy[0] (local-exec): Executing: ["/bin/sh" "-c" "echo this is the  0 modulestudy"]
+module.module_web.null_resource.modulestudy[1] (local-exec): Executing: ["/bin/sh" "-c" "echo this is the  1 modulestudy"]
+module.module_web.null_resource.modulestudy[1] (local-exec): this is the 1 modulestudy
+module.module_web.null_resource.modulestudy[1]: Creation complete after 0s [id=1954275784088403691]
+module.module_web.null_resource.modulestudy[0] (local-exec): this is the 0 modulestudy
+module.module_web.null_resource.modulestudy[0]: Creation complete after 0s [id=4605192081780404691]
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 
@@ -66,10 +65,10 @@ Outputs:
 id = {
   "id" = [
     {
-      "id" = "4422241328498518262"
+      "id" = "4605192081780404691"
     },
     {
-      "id" = "5483529788494088667"
+      "id" = "1954275784088403691"
     },
   ]
 }
