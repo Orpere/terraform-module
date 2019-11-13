@@ -16,7 +16,7 @@ cd <directory where pretend to add the repo>
 ```
 
 ```git
-git clone git@github.com:orlando.pereira/terraform-module.git
+git clone git@github.com:orlando-pereira/terraform-module.git
 ```
 
 ### 2 - move to your repo folder
@@ -48,16 +48,16 @@ terraform apply
 
 ```terraform
 
-module.module_web.null_resource.outputsStudy[1]: Creating...
-module.module_web.null_resource.outputsStudy[0]: Creating...
-module.module_web.null_resource.outputsStudy[1]: Provisioning with 'local-exec'...
-module.module_web.null_resource.outputsStudy[0]: Provisioning with 'local-exec'...
-module.module_web.null_resource.outputsStudy[1] (local-exec): Executing: ["/bin/sh" "-c" "echo this is the  1 outputsStudy"]
-module.module_web.null_resource.outputsStudy[0] (local-exec): Executing: ["/bin/sh" "-c" "echo this is the  0 outputsStudy"]
-module.module_web.null_resource.outputsStudy[0] (local-exec): this is the 0 outputsStudy
-module.module_web.null_resource.outputsStudy[0]: Creation complete after 0s [id=4347656025676492965]
-module.module_web.null_resource.outputsStudy[1] (local-exec): this is the 1 outputsStudy
-module.module_web.null_resource.outputsStudy[1]: Creation complete after 0s [id=4752306429300288452]
+module.module_web.null_resource.outputstudy[0]: Creating...
+module.module_web.null_resource.outputstudy[1]: Creating...
+module.module_web.null_resource.outputstudy[0]: Provisioning with 'local-exec'...
+module.module_web.null_resource.outputstudy[1]: Provisioning with 'local-exec'...
+module.module_web.null_resource.outputstudy[0] (local-exec): Executing: ["/bin/sh" "-c" "echo this is the  0 outputstudy"]
+module.module_web.null_resource.outputstudy[1] (local-exec): Executing: ["/bin/sh" "-c" "echo this is the  1 outputstudy"]
+module.module_web.null_resource.outputstudy[0] (local-exec): this is the 0 outputstudy
+module.module_web.null_resource.outputstudy[0]: Creation complete after 0s [id=4422241328498518262]
+module.module_web.null_resource.outputstudy[1] (local-exec): this is the 1 outputstudy
+module.module_web.null_resource.outputstudy[1]: Creation complete after 0s [id=5483529788494088667]
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 
@@ -66,10 +66,10 @@ Outputs:
 id = {
   "id" = [
     {
-      "id" = "4347656025676492965"
+      "id" = "4422241328498518262"
     },
     {
-      "id" = "4752306429300288452"
+      "id" = "5483529788494088667"
     },
   ]
 }
